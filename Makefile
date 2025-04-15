@@ -23,7 +23,7 @@ help:
 .PHONY: entrypoint
 entrypoint:
     # Run the entrypoint
-	python pipeline-runtime/kernel/entrypoint.py
+	python pipeline_runtime/kernel/entrypoint.py
 
 # Static Analysis with Radon
 .PHONY: static
