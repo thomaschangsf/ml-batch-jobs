@@ -1,6 +1,7 @@
 import argparse
 
 from utils.logger import Logger
+from utils.StdinReader import StdinReaderGenerator, StdinReaderIterator
 
 
 def parse_args():
@@ -13,10 +14,18 @@ def parse_args():
 
 
 def main():
+
     logger = Logger().get_logger()
     args = parse_args()
     logger.info(f"Args={args}")
     logger.info(f"job-to-run={args.job_to_run}")
+
+    stdin_reader = StdinReaderIterator("Say something: ")
+    for line in stdin_reader:
+        if line.lower() in ("exit", "quit"):
+            print("Goodbye!")
+            break
+        print(f"You said: {line}")
 
 
 if __name__ == "__main__":

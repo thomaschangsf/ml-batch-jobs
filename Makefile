@@ -23,7 +23,7 @@ help:
 .PHONY: entrypoint
 entrypoint:
     # Run the entrypoint
-	python pipeline_runtime/kernel/entrypoint.py
+	python kernel/entrypoint.py
 
 # Static Analysis with Radon
 .PHONY: static
@@ -36,7 +36,7 @@ static:
 .PHONY: style
 style:
 	black .
-	flake8 pipeline_runtime
+	flake8 kernel
 	isort .
 
 # Environment

@@ -2,7 +2,7 @@ import io
 import logging
 from contextlib import redirect_stdout
 
-from pipeline_runtime.kernel.utils.logger import Logger
+from kernel.utils.logger import Logger
 
 
 def test_logger_creation_defaults():
